@@ -72,3 +72,20 @@ form .overall-weather {
 form .unit {
   font-size: 12px;
 }
+
+.dev-details {
+  font-family: monospace;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.source-code,
+.dev-github {
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+.source-code:hover,
+.dev-github:hover {
+  text-decoration: underline;
+}
