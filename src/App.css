@@ -2,37 +2,73 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --gray: #e6e2eb;
+  --dark-text: #363636;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+Form {
+  width: 630px;
+  border: 1px solid var(--gray);
+  margin: 0 auto;
+  border-radius: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+Form .search-bar {
+  width: 300px;
+  height: 45px;
+  padding-left: 18px;
+  border-radius: 30px;
+  border: 1px solid #bccdde;
 }
 
-.App-link {
-  color: #61dafb;
+Form .search-button {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 21px;
+  padding-right: 27px;
+  border-radius: 30px;
+  border: 1px solid #2772db;
+  transition: all 200ms ease-in-out;
+  color: var(--dark-text);
+  background-color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form .current-location {
+  padding: 9px 18px;
+  border-radius: 30px;
+  border: 1px solid #91ca62;
+  transition: all 200ms ease-in-out;
+  color: var(--dark-text);
+  background-color: #fff;
+}
+
+form .search-button:hover {
+  background-color: #2772db;
+  color: #fff;
+}
+
+form .current-location:hover {
+  background-color: #91ca62;
+  color: #fff;
+}
+
+form .city-name {
+  font-size: 50px;
+  color: var(--dark-text);
+}
+
+form .city-temp {
+  color: var(--dark-text);
+  font-size: 19px;
+}
+
+form .overall-weather {
+  color: var(--dark-text);
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+form .unit {
+  font-size: 12px;
 }
