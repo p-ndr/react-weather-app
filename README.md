@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and is a sketch of my [SheCodes Plus Project](https://github.com/parnian-naderi/weather-app-shecodes), which is deployed [here](https://weatherappforshecodesplus.netlify.app)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and is a sketch of my [SheCodes Plus Project](https://github.com/parnian-naderi/weather-app-shecodes), which is deployed [here](https://weatherappforshecodesplus.netlify.app).
 ## Available Scripts
 
 In the project directory, you can run:
