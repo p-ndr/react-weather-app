@@ -6,12 +6,13 @@ export default function WeatherAppForm() {
 
   function updateCity(event) {
     event.preventDefault();
-    setCity(event.target.text.value);
+    if (event.target.text.value !== "") {
+      setCity(event.target.text.value);
+    }
   }
-
   return (
     <div className="container-fluid">
-      <form className="mt-5" onSubmit={updateCity}>
+      <form className="mt-5 pt-2" onSubmit={updateCity}>
         <div className="row mt-4 d-flex flex-sm justify-content-evenly">
           <div className="col-sm-6">
             <input

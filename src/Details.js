@@ -51,7 +51,7 @@ export default function Details(props) {
         <div className="weather-img">
           <ReactAnimatedWeather
             icon="CLEAR_DAY"
-            color="black"
+            color="white"
             size={128}
             animate={true}
           />

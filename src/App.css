@@ -1,17 +1,20 @@
 .App {
   text-align: center;
+  color: var(--white);
 }
 
 :root {
   --gray: #e6e2eb;
   --dark-text: #363636;
+  --white: #fff;
 }
 
 Form {
   width: 630px;
-  border: 1px solid var(--gray);
+  border: none;
   margin: 0 auto;
   border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 Form .search-bar {
@@ -19,28 +22,26 @@ Form .search-bar {
   height: 45px;
   padding-left: 18px;
   border-radius: 30px;
-  border: 1px solid #bccdde;
+  border: none;
+  background-color: var(--gray);
 }
 
 Form .search-button {
-  padding-top: 9px;
-  padding-bottom: 9px;
-  padding-left: 21px;
-  padding-right: 27px;
+  padding: 11px 30px 11px 21px;
   border-radius: 30px;
-  border: 1px solid #2772db;
+  border: none;
   transition: all 200ms ease-in-out;
   color: var(--dark-text);
-  background-color: #fff;
+  background-color: var(--gray);
 }
 
 form .current-location {
-  padding: 9px 18px;
+  padding: 11px 30px 11px 16px;
   border-radius: 30px;
-  border: 1px solid #91ca62;
+  border: none;
   transition: all 200ms ease-in-out;
   color: var(--dark-text);
-  background-color: #fff;
+  background-color: var(--gray);
 }
 
 form .search-button:hover {
@@ -55,16 +56,13 @@ form .current-location:hover {
 
 form .city-name {
   font-size: 50px;
-  color: var(--dark-text);
 }
 
 form .city-temp {
-  color: var(--dark-text);
   font-size: 19px;
 }
 
 form .overall-weather {
-  color: var(--dark-text);
   font-size: 18px;
   text-transform: capitalize;
 }
