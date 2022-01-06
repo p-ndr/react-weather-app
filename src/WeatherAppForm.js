@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import Details from "./Details";
 
@@ -13,6 +14,21 @@ export default function WeatherAppForm() {
 
   function showCurrentLocation(event) {
     event.preventDefault();
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          var lat = position.coords.latitude;
+          var lon = position.coords.longitude;
+          let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=2405521babf79c19f0fb38e819429c5f&units=metric`;
+          axios.get(url).then((response) => {
+            setCity(response.data.name);
+          });
+        },
+        function (error) {
+          console.log("error: " + error.code + " " + error.message);
+        }
+      );
+    }
   }
 
   return (
