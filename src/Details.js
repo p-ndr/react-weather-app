@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
-import ReactAnimatedWeather from "react-animated-weather/build/ReactAnimatedWeather";
 import Temperature from "./Temperature";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Details(props) {
   const [temperature, setTemperature] = useState(null);
@@ -9,6 +9,8 @@ export default function Details(props) {
   const [humidity, setHumidity] = useState(null);
   const [pressure, setPressure] = useState(null);
   const [windSpeed, setWindSpeed] = useState(null);
+  const [icon, setIcon] = useState(null);
+  let [localTime, setLocalTime] = useState(null);
   const defaultUnit = "metric";
 
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=2405521babf79c19f0fb38e819429c5f&units=${defaultUnit}`;
@@ -20,6 +22,8 @@ export default function Details(props) {
     getHumidity(response);
     getPressure(response);
     getWindSpeed(response);
+    getIcon(response);
+    getLocalTime(response);
     setTemperature(Math.round(response.data.main.temp));
   }
 
@@ -39,22 +43,34 @@ export default function Details(props) {
     setWindSpeed(Math.round(response.data.wind.speed));
   }
 
+  function getIcon(response) {
+    setIcon(response.data.weather[0].icon);
+  }
+
+  function getLocalTime(response) {
+    var datetime = new Date(response.data.dt * 1000);
+    var hr =
+      datetime.getHours() < 10
+        ? "0" + datetime.getHours()
+        : datetime.getHours();
+    var min =
+      datetime.getMinutes() < 10
+        ? "0" + datetime.getMinutes()
+        : datetime.getMinutes();
+    var time = hr + ":" + min;
+    setLocalTime(time);
+  }
+
   return (
     <div className="row mt-5">
-      <div className="col-sm-6 text-center ms-4">
+      <div className="col-sm-6 text-center ms-4 lh-base">
         <div className="city-name">{props.city}</div>
         <Temperature temp={temperature} unit={defaultUnit} />
         <div className="overall-weather">{weatherState}</div>
+        <div className="local-time mt-1">Last updated at {localTime}</div>
       </div>
-      <div className="col-sm-5 mt-2">
-        <div className="weather-img">
-          <ReactAnimatedWeather
-            icon="CLEAR_DAY"
-            color="white"
-            size={128}
-            animate={true}
-          />
-        </div>
+      <div className="col-sm-5 mt-3">
+        <WeatherIcon code={icon} description={weatherState} />
       </div>
       <div className="row my-5">
         <div className="col-sm-4">

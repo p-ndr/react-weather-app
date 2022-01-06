@@ -55,7 +55,7 @@ form .current-location:hover {
 }
 
 form .city-name {
-  font-size: 50px;
+  font-size: 45px;
 }
 
 form .city-temp {
@@ -73,6 +73,10 @@ form .unit {
   top: -10px;
 }
 
+form .local-time {
+  font-size: 14px;
+}
+
 .dev-details {
   font-family: monospace;
   font-size: 14px;
@@ -83,10 +87,16 @@ form .unit {
 .dev-github,
 .convert-unit {
   text-decoration: none;
+  color: #363636;
   transition: all 200ms ease-in-out;
+}
+
+.convert-unit:hover {
+  color: #363636;
 }
 
 .source-code:hover,
 .dev-github:hover {
   text-decoration: underline;
+  color: #363636;
 }
