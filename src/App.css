@@ -59,16 +59,18 @@ form .city-name {
 }
 
 form .city-temp {
-  font-size: 19px;
+  font-size: 22px;
 }
 
 form .overall-weather {
-  font-size: 18px;
+  font-size: 20px;
   text-transform: capitalize;
+  opacity: 0.8;
 }
 
 form .unit {
   font-size: 12px;
+  top: -10px;
 }
 
 .dev-details {
@@ -78,7 +80,8 @@ form .unit {
 }
 
 .source-code,
-.dev-github {
+.dev-github,
+.convert-unit {
   text-decoration: none;
   transition: all 200ms ease-in-out;
 }

@@ -10,6 +10,11 @@ export default function WeatherAppForm() {
       setCity(event.target.text.value);
     }
   }
+
+  function showCurrentLocation(event) {
+    event.preventDefault();
+  }
+
   return (
     <div className="container-fluid">
       <form className="mt-5 pt-2" onSubmit={updateCity}>
@@ -30,7 +35,12 @@ export default function WeatherAppForm() {
             />
           </div>
           <div className="col-sm-2">
-            <button className="current-location w-100">Current</button>
+            <button
+              className="current-location w-100"
+              onClick={showCurrentLocation}
+            >
+              Current
+            </button>
           </div>
         </div>
         <Details city={city} />

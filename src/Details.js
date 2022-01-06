@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import ReactAnimatedWeather from "react-animated-weather/build/ReactAnimatedWeather";
+import Temperature from "./Temperature";
 
 export default function Details(props) {
   const [temperature, setTemperature] = useState(null);
@@ -8,13 +9,13 @@ export default function Details(props) {
   const [humidity, setHumidity] = useState(null);
   const [pressure, setPressure] = useState(null);
   const [windSpeed, setWindSpeed] = useState(null);
+  const defaultUnit = "metric";
 
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=2405521babf79c19f0fb38e819429c5f&units=metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=2405521babf79c19f0fb38e819429c5f&units=${defaultUnit}`;
 
   axios.get(url).then(setInfo);
 
   function setInfo(response) {
-    console.log(response);
     getWeatherState(response);
     getHumidity(response);
     getPressure(response);
@@ -40,14 +41,12 @@ export default function Details(props) {
 
   return (
     <div className="row mt-5">
-      <div className="col-sm-6">
+      <div className="col-sm-6 text-center ms-4">
         <div className="city-name">{props.city}</div>
-        <div className="city-temp">
-          {temperature}°<sup className="unit"> C | F</sup>
-        </div>
+        <Temperature temp={temperature} unit={defaultUnit} />
         <div className="overall-weather">{weatherState}</div>
       </div>
-      <div className="col-sm-6">
+      <div className="col-sm-5 mt-2">
         <div className="weather-img">
           <ReactAnimatedWeather
             icon="CLEAR_DAY"
