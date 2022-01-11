@@ -30,7 +30,7 @@ export default function Temperature(props) {
     );
   } else {
     return (
-      <div className="city-temp">
+      <span className="city-temp">
         {Math.round(props.temp)}
         <sup className="unit">
           °C |{" "}
@@ -38,7 +38,7 @@ export default function Temperature(props) {
             °F
           </a>
         </sup>
-      </div>
+      </span>
     );
   }
 }
