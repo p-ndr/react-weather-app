@@ -1,5 +1,3 @@
-import axios from "axios";
-import { useState } from "react";
 import Temperature from "./Temperature";
 import WeatherIcon from "./WeatherIcon";
 
@@ -18,7 +16,11 @@ export default function Details(props) {
     <div className="row mt-5">
       <div className="col-sm-6 text-center ms-4 lh-base">
         <div className="city-name">{props.weatherData.city}</div>
-        <Temperature temp={props.weatherData.temperature} unit={defaultUnit} />
+        <Temperature
+          temperature={props.weatherData.temperature}
+          unit={defaultUnit}
+          isForecast={false}
+        />
         <div className="overall-weather">{props.weatherData.weatherState}</div>
         <div className="local-time mt-1">Last updated at {getLocalTime()}</div>
       </div>
@@ -28,7 +30,7 @@ export default function Details(props) {
           description={props.weatherData.weatherState}
         />
       </div>
-      <div className="row my-5">
+      <div className="row mt-5 mb-4">
         <div className="col-sm-4">
           <div className="humidity">💧 {props.weatherData.humidity}%</div>
         </div>

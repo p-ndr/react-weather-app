@@ -58,8 +58,12 @@ form .city-name {
   font-size: 45px;
 }
 
-form .city-temp {
+form .city-temp-noforecast {
   font-size: 22px;
+}
+
+form .city-temp-forecast {
+  font-size: 14px;
 }
 
 form .overall-weather {
@@ -99,4 +103,9 @@ form .local-time {
 .dev-github:hover {
   text-decoration: underline;
   color: #363636;
+}
+
+.opacity-8 {
+  opacity: 0.8;
+  color: var(--gray);
 }

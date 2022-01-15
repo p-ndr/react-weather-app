@@ -17,13 +17,13 @@ export default function WeatherIcon(props) {
     "13n": "SNOW",
     "50d": "WIND",
   };
-  if (props.code in iconMapping) {
+  if (props.icon in iconMapping) {
     return (
       <div className="weather-img">
         <ReactAnimatedWeather
-          icon={iconMapping[props.code]}
+          icon={iconMapping[props.icon]}
           color="#e6e2eb"
-          size={128}
+          size={props.iconsize}
           animate={true}
         />
       </div>

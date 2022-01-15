@@ -86,10 +86,12 @@ export default function WeatherAppForm() {
             </div>
           </div>
           <Details weatherData={weatherData} />
-          <Forecast
-            latitude={weatherData.latitude}
-            longitude={weatherData.longitude}
-          />
+          <div className="row pb-3 d-flex justify-content-around">
+            <Forecast
+              latitude={weatherData.latitude}
+              longitude={weatherData.longitude}
+            />
+          </div>
         </form>
       </div>
     );
@@ -97,7 +99,7 @@ export default function WeatherAppForm() {
     search();
     return (
       <div className="pre-process">
-        <h1 className="loading">Loading...</h1>
+        <h1 className="loading mx-auto my-5">Loading...</h1>
         <div className="load-animation">
           <Rings arialLabel="loading-indicator" secondaryColor="#000" />
         </div>
