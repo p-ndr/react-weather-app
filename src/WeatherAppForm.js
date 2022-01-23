@@ -100,8 +100,8 @@ export default function WeatherAppForm() {
     return (
       <div className="pre-process">
         <h1 className="loading mx-auto my-5">Loading...</h1>
-        <div className="load-animation">
-          <Rings arialLabel="loading-indicator" secondaryColor="#000" />
+        <div className="load-animation mx-auto d-flex justify-content-center">
+          <Rings arialLabel="loading-indicator" color="#000" secondaryColor="#000" />
         </div>
       </div>
     );
